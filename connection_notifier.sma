@@ -1,7 +1,7 @@
 #include <amxmodx>
 #include <amxmisc>
 
-#define PLUGIN_NAME     "Connection Announcer"
+#define PLUGIN_NAME     "Connection Notifier"
 #define PLUGIN_VERSION  "1.0"
 #define PLUGIN_AUTHOR   "sakulmore"
 

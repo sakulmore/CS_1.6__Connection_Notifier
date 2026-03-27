@@ -1,4 +1,4 @@
-# CS 1.6 - Connection Announcer (Notifier)
+# CS 1.6 - Connection Notifier
 A plugin that sends notifications to the chat when players connect to the server.
 
 One advantage of this plugin is that you can set up custom messages and connection sounds for specific players (using SteamID).

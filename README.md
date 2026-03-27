@@ -3,6 +3,8 @@ A plugin that sends notifications to the chat when players connect to the server
 
 One advantage of this plugin is that you can set up custom messages and connection sounds for specific players (using SteamID).
 
+I got the inspiration for the plugin from [**this forum thread (AlliedMods)**](https://forums.alliedmods.net/showthread.php?t=352432).
+
 # Installation
 - Just download the plugin and upload the .amxx file to your plugins folder on your server (or you can of course compile the .sma file and then upload the compilated .amxx file to your server).
 - Then write the plugin name (with .amxx) to `/cstrike/addons/amxmodx/configs/plugins.ini`.

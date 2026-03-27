@@ -42,5 +42,8 @@ default_disconnect_sound=""
 ; Syntax: "<SteamID>" "<message>" "<sound>" "<connection_type>"
 ```
 
+# Sounds
+If you want to use sound files, enter the exact filename (it should contain only lowercase letters) including the file extension (I recommend .wav).
+
 # Support
 If you having any issues please feel free to write your issue to the issue section :) .

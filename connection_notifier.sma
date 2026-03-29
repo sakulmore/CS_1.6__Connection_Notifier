@@ -62,7 +62,7 @@ LoadConfig() {
             fprintf(file, "; *t    =   Team Color%c", 10)
             fprintf(file, "; %c*    =   Displays a literal asterisk (*)%c", 92, 10)
             fprintf(file, ";%c", 10)
-            fprintf(file, "; You can use %cnone%c value in: %cdefault_connect_sound%c, %cdefault_disconnect_sound%c, %c<sound>%c%c", 34, 34, 34, 34, 34, 34, 34, 34, 10)
+            fprintf(file, "; You can use %cnone%c value in: %cdefault_connect_sound%c, %cdefault_disconnect_sound%c, %c<sound>%c%c", 34, 34, 34, 34, 34, 34, 34, 34, 10, 10)
             
             fprintf(file, "; Settings%c", 10)
             fprintf(file, "default_connect_message=%cThe player *g%c*{PLAYER_NAME}%c* *dhas joined the server.%c%c", 34, 92, 92, 34, 10)

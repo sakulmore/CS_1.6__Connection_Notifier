@@ -18,20 +18,21 @@ connections.cfg:
 ; Here you can edit messages or add custom sounds
 ;
 ; You can use these placeholders:
-; {PLAYER_NAME}     =   Displays the player's name
-; {DATE}            =   Displays the connection date
-; {TIME}            =   Displays the connection time
-; {STEAMID}         =   Displays the player's SteamID
+; {PLAYER_NAME}      =   Displays the player's name
+; {DATE}             =   Displays the connection date
+; {TIME}             =   Displays the connection time
+; {STEAMID}          =   Displays the player's SteamID
 ;
 ; You can use these colors:
 ; *d    =   Default (Yellow) Color
 ; *g    =   Green Color
 ; *t    =   Team Color
-
+; \*    =   Displays a literal asterisk (*)
+;
 ; You can use "none" value in: "default_connect_sound", "default_disconnect_sound", "<sound>"
 ; Settings
-default_connect_message="The player *g{PLAYER_NAME} *dhas joined the server."
-default_disconnect_message="The player *g{PLAYER_NAME} *dhas disconnected from the server."
+default_connect_message="The player *g\*{PLAYER_NAME}\* *dhas joined the server."
+default_disconnect_message="The player *g\*{PLAYER_NAME}\* *dhas disconnected from the server."
 default_connect_sound=""
 default_disconnect_sound=""
 

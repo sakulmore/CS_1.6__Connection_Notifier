@@ -2,7 +2,7 @@
 #include <amxmisc>
 
 #define PLUGIN_NAME     "Connection Notifier"
-#define PLUGIN_VERSION  "1.0"
+#define PLUGIN_VERSION  "1.1"
 #define PLUGIN_AUTHOR   "sakulmore"
 
 new g_szCfgFile[128]
@@ -59,12 +59,14 @@ LoadConfig() {
             fprintf(file, "; You can use these colors:%c", 10)
             fprintf(file, "; *d    =   Default (Yellow) Color%c", 10)
             fprintf(file, "; *g    =   Green Color%c", 10)
-            fprintf(file, "; *t    =   Team Color%c%c", 10, 10)
+            fprintf(file, "; *t    =   Team Color%c", 10)
+            fprintf(file, "; %c*    =   Displays a literal asterisk (*)%c", 92, 10)
+            fprintf(file, ";%c", 10)
             fprintf(file, "; You can use %cnone%c value in: %cdefault_connect_sound%c, %cdefault_disconnect_sound%c, %c<sound>%c%c", 34, 34, 34, 34, 34, 34, 34, 34, 10)
             
             fprintf(file, "; Settings%c", 10)
-            fprintf(file, "default_connect_message=%cThe player *g{PLAYER_NAME} *dhas joined the server.%c%c", 34, 34, 10)
-            fprintf(file, "default_disconnect_message=%cThe player *g{PLAYER_NAME} *dhas disconnected from the server.%c%c", 34, 34, 10)
+            fprintf(file, "default_connect_message=%cThe player *g%c*{PLAYER_NAME}%c* *dhas joined the server.%c%c", 34, 92, 92, 34, 10)
+            fprintf(file, "default_disconnect_message=%cThe player *g%c*{PLAYER_NAME}%c* *dhas disconnected from the server.%c%c", 34, 92, 92, 34, 10)
             fprintf(file, "default_connect_sound=%c%c%c", 34, 34, 10)
             fprintf(file, "default_disconnect_sound=%c%c%c%c", 34, 34, 10, 10)
             
@@ -176,6 +178,10 @@ FormatAndPrintMessage(id, const szInputMsg[]) {
     formatex(szPlaceholder, charsmax(szPlaceholder), "{TIME}")
     replace_all(szFormatted, charsmax(szFormatted), szPlaceholder, szTime)
 
+    new szEscapedAsterisk[4]
+    formatex(szEscapedAsterisk, charsmax(szEscapedAsterisk), "%c*", 92)
+    replace_all(szFormatted, charsmax(szFormatted), szEscapedAsterisk, "#ESC_AST#")
+
     new szColor[4]
     
     szColor[0] = 1; szColor[1] = 0;
@@ -186,6 +192,8 @@ FormatAndPrintMessage(id, const szInputMsg[]) {
     
     szColor[0] = 4; szColor[1] = 0;
     replace_all(szFormatted, charsmax(szFormatted), "*g", szColor)
+
+    replace_all(szFormatted, charsmax(szFormatted), "#ESC_AST#", "*")
 
     if (szFormatted[0] != 1 && szFormatted[0] != 3 && szFormatted[0] != 4) {
         new szTemp[256]
